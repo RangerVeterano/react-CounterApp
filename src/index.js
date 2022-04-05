@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import React from "react";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//para poder renderizar elementos se emplea ahora el createRoot
+import { createRoot } from "react-dom/client";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//importamos el componente que hemos creado
+// import PrimeraApp from "./PrimeraApp";
+
+
+import CounterApp from "./CounterApp";
+
+//importamos el archivo de estilos, hay que especificar la extension 
+import "./index.css"
+
+
+//hacemos la referecia al div donde va a ser el contenedor
+const contenedor = document.querySelector('#root');
+
+//Creamos el contenedor del elemento que hemos recogido
+const root = createRoot(contenedor);
+
+//Renderizamos el componente
+//podemos mandar numeros con una expresion de js saludo={123}
+root.render(<CounterApp value={54321} />);
