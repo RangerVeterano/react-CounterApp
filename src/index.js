@@ -21,4 +21,4 @@ const root = createRoot(contenedor);
 
 //Renderizamos el componente
 //podemos mandar numeros con una expresion de js saludo={123}
-root.render(<CounterApp value={54321} />);
+root.render(<CounterApp value={54321} />); 
